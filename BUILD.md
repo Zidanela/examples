@@ -2,7 +2,7 @@
 
 These guidelines use only for Linux, Mac or Window Sub System (Windows OS is not supported)
 
-Istio components only have few external dependencies you need to set up before being able to build and run the code.
+Istio components only have few external dependencies to set up before building the code.
 
 1. Setting up Go
 2. Setting up Docker
@@ -11,17 +11,17 @@ Istio components only have few external dependencies you need to set up before b
 
 ## Setting up Go
 
-Many Istio components are written in the Go programming language. To build, you'll need a Go development environment. If you haven't set up a Go development environment, please follow [these instructions](https://golang.org/doc/install) to install the Go tools.
+Many Istio components are written in the Go programming language. So to build it, you will need a Go development environment.  Please follow [these instructions](https://golang.org/doc/install) to install the Go tools.
 
-Istio currently builds with Go 1.14
+Istio currently built with Go 1.14
 
 ## Setting up Docker
 
-Istio has a docker build system for creating and publishing Docker images. To use docker to build you will need:
+Istio has a docker build system for creating and publishing Docker images. To use docker, you will need:
 
-- **Docker tools**: To download and install Docker follow [these instructions](https://docs.docker.com/install/).
+- **Docker tools**: Download and install Docker by following [these instructions](https://docs.docker.com/install/).
 
-- **Docker hub ID**: If you do not yet have a docker ID account you can follow [these steps](https://docs.docker.com/docker-id/) to create one. This ID will be used in a later step when setting up the environment variables.
+- **Docker hub ID**: If you do not yet have a docker ID account, you can follow [these steps](https://docs.docker.com/docker-id/) to create one. This ID will be used in a later step when setting up the environment variables.
 
 - **Docker credential storage**: Istio has moved to a build system which [builds inside a container](https://docs.google.com/document/d/1vBEt4RyHu2Ywqx6CQk8pHm6wrJCIi4UNLw3xrJdHFtA). Credential transfer into the container is a work in progress. Credential transfer works well on Linux.
 
@@ -46,13 +46,13 @@ export ISTIO=$HOME/istio/istio.io
 
 ## Build
 
-Build & push Pilot and Proxy images, run following command:
+Build & push Pilot and Proxy images, run the following command
 
 ```bash
 make docker.push
 ```
 
-> Note: Images are pushed to docker hub
+> Note: Images are pushed to the docker hub
 
 Build `istioctl`:
 
@@ -89,7 +89,7 @@ spec:
 
 ```
 
-- Use `istioctl` above, and run following command:
+- Use `istioctl` with the following command
 
 ```bash
 ./istioctl manifest --set installPackagePath=$PATH_TO_OUTPUT_CHARTS apply -f ./integrate-keyfactor-ca.yaml
